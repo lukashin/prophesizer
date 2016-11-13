@@ -60,7 +60,7 @@ I'm tired of manual Dummies writing
 
 ## Installation
 
-Soon: `composer require prophesizer/prophesizer`
+`composer require prophesizer/prophesizer`
 
 **PhpStorm** Settings / Tools / File Watchers / `+`
 
