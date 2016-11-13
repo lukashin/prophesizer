@@ -67,13 +67,15 @@ I'm tired of manual Dummies writing
 ```
 -Watcher-
 Name: prophesizer
+
 -Options-
 Show console : Error
 [ ] Immediate file synchronization
-[Watcher Settings]
+
+-Watcher Settings-
 File type    : PHP
 Scope        : VCS / Changed Files
-Prograp      : 
+Program      : $ProjectFileDir$/vendor/bin/prophesizer
 Arguments    : $FilePath$ $ProjectFileDir$ 
 [x] Create output file from stdout 
 ```
