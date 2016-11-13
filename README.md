@@ -80,4 +80,4 @@ Arguments    : $FilePath$ $ProjectFileDir$
 
 [PhpStorm / New watcher dialog](https://www.jetbrains.com/help/phpstorm/2016.2/new-watcher-dialog.html)
 
-<img src="https://github.com/lukashin/prophesizer/blob/master/resources/images/prophesizer-watcher-setup.png?raw=true" alt="prophesizer-watcher-setup" width="100%" />
+<img src="https://github.com/lukashin/prophesizer/blob/master/resources/images/prophesizer-watcher-setup.png?raw=true" alt="prophesizer-watcher-setup" width="694" />
