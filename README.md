@@ -20,12 +20,14 @@ public function someUnitTest()
 ```
 Press `Ctrl+S` and line with `///` will be transformed into
 ```
-public function someShittyTest()
+public function someUnitTest()
 {
     // $service = $this->prophesize('Service\SomeService');
     $service = $this->getSomeServiceDouble(); // todo: edit predictions!
 }
+```
 
+```
 /**
  * @return \Service\SomeService
  */
@@ -77,3 +79,5 @@ Arguments    : $FilePath$ $ProjectFileDir$
 ```
 
 [PhpStorm / New watcher dialog](https://www.jetbrains.com/help/phpstorm/2016.2/new-watcher-dialog.html)
+
+<img src="https://github.com/lukashin/prophesizer/blob/master/resources/images/prophesizer-watcher-setup.png?raw=true" alt="prophesizer-watcher-setup" width="100%" />
