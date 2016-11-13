@@ -1,0 +1,26 @@
+{
+  "name": "prophesizer/prophesizer",
+  "description": "Generates prophecy double stubs",
+  "minimum-stability": "dev",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Aleksei Lukashin",
+      "email": "aleksei@lukashin.pro"
+    }
+  ],
+  "require": {
+    "php": ">=5.3.6"
+  },
+  "require-dev": {
+    "phpro/grumphp": "0.9.*",
+    "squizlabs/php_codesniffer": "2.7.*",
+    "phpmd/phpmd": "2.4.*"
+  },
+  "autoload": {
+    "psr-0": {
+      "Prophesizer\\": "src/"
+    }
+  },
+  "bin": ["bin/prophesizer"]
+}

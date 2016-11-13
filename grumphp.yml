@@ -1,0 +1,9 @@
+parameters:
+    git_dir: .
+    bin_dir: vendor/bin
+    phpmd:
+        exclude: []
+        ruleset: ['cleancode', 'codesize', 'naming']
+        triggered_by: ['php']
+    phpcs:
+        standard: "vendor/leaphub/phpcs-symfony2-standard/leaphub/phpcs/Symfony2/"
