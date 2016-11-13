@@ -78,6 +78,6 @@ Arguments    : $FilePath$ $ProjectFileDir$
 [x] Create output file from stdout 
 ```
 
-[PhpStorm / New watcher dialog](https://www.jetbrains.com/help/phpstorm/2016.2/new-watcher-dialog.html)
+[PhpStorm / Edit watcher dialog](https://www.jetbrains.com/help/phpstorm/2016.2/new-watcher-dialog.html)
 
 <img src="https://raw.githubusercontent.com/lukashin/prophesizer/master/resources/images/prophesizer-watcher-setup.png" alt="prophesizer-watcher-setup" />
