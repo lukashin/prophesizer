@@ -55,10 +55,7 @@ class ProphecyGenerator
 
         $methods = [];
         foreach ($classReflection->getMethods() as $method) {
-            if ($method->isConstructor()) {
-                continue;
-            }
-            if ($method->isPublic() && !$method->isStatic()) {
+            if (!$this->skipMethod($method)) {
                 $methods[] = new MethodProphecy($method, $use);
             }
         }
@@ -112,5 +109,33 @@ class ProphecyGenerator
         }
 
         return $this->doubleFactoryMethod;
+    }
+
+    /**
+     * @param \ReflectionMethod $method
+     * @return bool
+     */
+    private function skipMethod(\ReflectionMethod $method)
+    {
+        $skipMethods = [
+            '__call',
+            '__toString',
+            '__get',
+            '__set',
+            '__serialize',
+            '__destruct',
+            '__isset',
+            '__unset',
+            '__sleep',
+            '__wakeup',
+            '__invoke',
+        ];
+        //todo: set "magicMethod" flag
+
+        return (!$method->isConstructor()
+            && $method->isPublic()
+            && !$method->isStatic()
+            && !in_array($method->getName(), $skipMethods)
+        );
     }
 }

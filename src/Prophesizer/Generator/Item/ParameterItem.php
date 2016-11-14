@@ -30,7 +30,6 @@ class ParameterItem
         $this->use = $use;
     }
 
-
     /**
      * @param \ReflectionMethod $method
      * @param string[]          $use
@@ -67,7 +66,7 @@ class ParameterItem
             // $matches[2] - type(s) column; $matches[3] - param column
             $paramToType = array_combine($matches[3], $matches[2]);
             foreach ($paramToType as $paramName => $paramTypes) {
-                $paramTypes = explode('|', $paramTypes);
+                $paramTypes = $paramTypes ? explode('|', $paramTypes) : ['mixed'];
                 $return[] = new self($paramName, $paramTypes, $use);
             }
         }
@@ -93,7 +92,10 @@ class ParameterItem
     {
         if (isset($this->use['type'])) {
             $type = '\\'.ltrim($this->use['type'], '\\');
+        } elseif (strtolower($type) === $type) {
+            // +is_{type}() function exists = built-in type?
         }
+
         switch ($type) {
             case 'string[]':
                 $method = 'that(function ($a) { return ($a === array_filter($a, \'is_string\')); })';
@@ -123,6 +125,22 @@ class ParameterItem
                 break;
         }
 
-        return 'Argument::'.$method;
+        return $this->getArgumentClassAlias().'::'.$method;
+    }
+
+    /**
+     * @return string
+     */
+    private function getArgumentClassAlias()
+    {
+        return $this->useShortArgumentAlias() ? 'A' : 'Argument';
+    }
+
+    /**
+     * @return bool
+     */
+    private function useShortArgumentAlias()
+    {
+        return false;
     }
 }

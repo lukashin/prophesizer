@@ -126,11 +126,13 @@ class ReturnValueItem
         if (preg_match($pattern, $doc, $matches)) {
             $returnTypes = explode('|', $matches[1]);
             foreach ($returnTypes as $returnType) {
-                if ('void' === $returnType) {
+                if (!$returnType || 'void' === $returnType) {
                     continue;
                 }
                 $return[] = new self($returnType, $use);
             }
+        } else {
+            $return[] = new self('null', $use); // void or nothing
         }
 
         return $return;
